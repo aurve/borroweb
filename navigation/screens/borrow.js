@@ -5,12 +5,6 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-<<<<<<< HEAD
-//test part 2
-//test again
-=======
-//Testing only delete when presenting
->>>>>>> 5e882006bee0c7053de1b33052bb28dc9db44a0a
 
 const DismissKeyboard = ({children}) => (
   <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
