@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, SafeAreaSafeAreaView, TouchableWithoutFeedback,
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React from 'react';
 
-export default function Lender({navigation}) {
+export default function Loan({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
     <Text>Lender</Text>

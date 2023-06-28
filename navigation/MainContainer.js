@@ -11,6 +11,7 @@ import Inbox from './screens/inbox'
 import Earnings from './screens/earnings'
 import Cashout from './screens/cashout'
 import Lender from './screens/lender'
+import Loan from './screens/loan'
 
 // Screen name
 const BorrowName = 'Home' ; 
@@ -42,20 +43,20 @@ export default function MainContainer(){
                         let rn = route.name;
 
                         if (rn === BorrowName) {
-                            iconName = focused ? 'home' : 'home-outline'
+                            iconName = focused ? 'home' : 'home'
                         } else if (rn === InboxName) {
-                            iconName = focused ? 'mail-unread' : 'mail-unread-outline'
+                            iconName = focused ? 'mail-unread-outline' : 'mail-unread-outline'
                         } else if (rn === EarningsName) {
-                            iconName = focused ? 'hand-right' : 'hand-right-outline'
+                            iconName = focused ? 'hand-right-outline' : 'hand-right-outline'
                         } else if (rn === CashoutName) {
-                            iconName = focused ? 'cash' : 'cash-outline'
+                            iconName = focused ? 'cash-outline' : 'cash-outline'
                         }
 
                         return <Ionicons name={iconName} size={size} color={color}/>
                     },
                 })}
                 tabBarOptions={{
-                    activeTintColor: 'tomato',
+                    activeTintColor: 'grey',
                     inactiveTintColor: 'grey',
                     labelStyle: {paddingBottom: 10, fontSize: 10},
                     style: {padding: 10, height: 70}

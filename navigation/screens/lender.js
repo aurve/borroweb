@@ -4,6 +4,8 @@ import { Dropdown } from 'react-native-element-dropdown';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+
+//choose your lender screen
 const popularity = [
   { label: 'Most popular', value: '1' },
   { label: 'Least popular', value: '2' },
