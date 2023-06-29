@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -41,119 +41,124 @@ const DropdownComponent = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.headerText}>Choose Your Lender</Text>
+      <ScrollView contentContainerStyle={{flexGrow: 1, backgroundColor: '#fff'}} showsVerticalScrollIndicator={false} indicatorStyle="white">
+        <View style={styles.content}>
+          <Text style={styles.headerText}>Choose Your Lender</Text>
 
-      <View style={styles.rowContainer}>
-        <View style={styles.columnContainer}>
-          <Text style={styles.label}>Popularity</Text>
-          <Dropdown
-            style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
-            placeholderStyle={styles.placeholderStyle}
-            selectedTextStyle={styles.selectedTextStyle}
-            inputSearchStyle={styles.inputSearchStyle}
-            iconStyle={styles.iconStyle}
-            data={popularity}
-            maxHeight={400}
-            labelField="label"
-            valueField="value"
-            placeholder={!isFocus ? 'Most popular' : '...'}
-            value={popularityValue}
-            onFocus={() => setIsFocus(true)}
-            onBlur={() => setIsFocus(false)}
-            onChange={item => {
-              setPopularityValue(item.value);
-              setIsFocus(false);
-            }}
-          />
-        </View>
+          <View style={styles.rowContainer}>
+            <View style={styles.columnContainer}>
+              <Text style={styles.label}>Popularity</Text>
+                <Dropdown
+                  style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
+                  placeholderStyle={styles.placeholderStyle}
+                  selectedTextStyle={styles.selectedTextStyle}
+                  inputSearchStyle={styles.inputSearchStyle}
+                  iconStyle={styles.iconStyle}
+                  data={popularity}
+                  maxHeight={400}
+                  labelField="label"
+                  valueField="value"
+                  placeholder={!isFocus ? 'Most popular' : '...'}
+                  value={popularityValue}
+                  onFocus={() => setIsFocus(true)}
+                  onBlur={() => setIsFocus(false)}
+                  onChange={item => {
+                    setPopularityValue(item.value);
+                    setIsFocus(false);
+                  }}
+                />
+            </View>
 
-        <View style={styles.columnContainer}>
-          <Text style={styles.label}>Duration</Text>
-          <Dropdown
-            style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
-            placeholderStyle={styles.placeholderStyle}
-            selectedTextStyle={styles.selectedTextStyle}
-            inputSearchStyle={styles.inputSearchStyle}
-            iconStyle={styles.iconStyle}
-            data={duration}
-            maxHeight={400}
-            labelField="label"
-            valueField="value"
-            placeholder={!isFocus ? '3 months' : '...'}
-            value={durationValue}
-            onFocus={() => setIsFocus(true)}
-            onBlur={() => setIsFocus(false)}
-            onChange={item => {
-              setDurationValue(item.value);
-              setIsFocus(false);
-            }}
-          />
-        </View>
+            <View style={styles.columnContainer}>
+              <Text style={styles.label}>Duration</Text>
+                <Dropdown
+                  style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
+                  placeholderStyle={styles.placeholderStyle}
+                  selectedTextStyle={styles.selectedTextStyle}
+                  inputSearchStyle={styles.inputSearchStyle}
+                  iconStyle={styles.iconStyle}
+                  data={duration}
+                  maxHeight={400}
+                  labelField="label"
+                  valueField="value"
+                  placeholder={!isFocus ? '3 months' : '...'}
+                  value={durationValue}
+                  onFocus={() => setIsFocus(true)}
+                  onBlur={() => setIsFocus(false)}
+                  onChange={item => {
+                    setDurationValue(item.value);
+                    setIsFocus(false);
+                    }}
+                />
+            </View>
 
-        <View style={styles.columnContainer}>
-          <Text style={styles.label}>Interest Rate</Text>
-          <Dropdown
-            style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
-            placeholderStyle={styles.placeholderStyle}
-            selectedTextStyle={styles.selectedTextStyle}
-            inputSearchStyle={styles.inputSearchStyle}
-            iconStyle={styles.iconStyle}
-            data={rate}
-            maxHeight={400}
-            labelField="label"
-            valueField="value"
-            placeholder={!isFocus ? 'Ascending' : '...'}
-            value={rateValue}
-            onFocus={() => setIsFocus(true)}
-            onBlur={() => setIsFocus(false)}
-            onChange={item => {
-              setRateValue(item.value);
-              setIsFocus(false);
-            }}
-          />
-        </View>
-      </View>
-      <View style={styles.boxContainer}>
-      <Text style={styles.subheader}>Lowest Interest Rate</Text>
-      <View style={styles.emptyBox}>
-          <Text style={styles.boxheader}>Ross Geller</Text>
-          <Text style={styles.boxbody}>Interest rate</Text>
-          <Text style={styles.boxpercent}>3.01%</Text>
-          <Text style={styles.boxbody}>Amount to receive:<Text style={styles.highlight}>₱2,450</Text></Text>
-          <Text style={styles.boxbody}>Payment duration:<Text style={styles.highlight}>3 months</Text></Text>
-          <View style={styles.contactbg}>
-          <Text style={styles.boxcontact}>Contact Ross</Text>
+            <View style={styles.columnContainer}>
+              <Text style={styles.label}>Interest Rate</Text>
+                <Dropdown
+                  style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
+                  placeholderStyle={styles.placeholderStyle}
+                  selectedTextStyle={styles.selectedTextStyle}
+                  inputSearchStyle={styles.inputSearchStyle}
+                  iconStyle={styles.iconStyle}
+                  data={rate}
+                  maxHeight={400}
+                  labelField="label"
+                  valueField="value"
+                  placeholder={!isFocus ? 'Ascending' : '...'}
+                  value={rateValue}
+                  onFocus={() => setIsFocus(true)}
+                  onBlur={() => setIsFocus(false)}
+                  onChange={item => {
+                    setRateValue(item.value);
+                    setIsFocus(false);
+                  }}
+                  />
           </View>
-      </View>
-      </View>
-      <View style={styles.copy}>
-      <View style={styles.boxContainer1}>
-      <Text style={styles.subheader1}>Other Rates</Text>
-      <View style={styles.empty}>
-          <Text style={styles.boxheader1}>Chandler Bing</Text>
-          <Text style={styles.boxbody}>Interest rate</Text>
-          <Text style={styles.boxpercent1}>4.00%</Text>
-          <Text style={styles.boxbody}>Amount to receive:</Text>
-          <Text style={styles.texthighlight}>₱2,450</Text>
-          <Text style={styles.boxbody}>Payment duration:</Text>
-          <Text style={styles.texthighlight}>3 months</Text>
-      </View>
-      </View>
-        
-      
-      <View style={styles.boxContainer1}>
-      <Text style={styles.subheader1}></Text>
-      <View style={styles.empty}>
-          <Text style={styles.boxheader1}>Monica Geller</Text>
-          <Text style={styles.boxbody}>Interest rate</Text>
-          <Text style={styles.boxpercent1}>4.00%</Text>
-          <Text style={styles.boxbody}>Amount to receive:</Text>
-          <Text style={styles.texthighlight}>₱2,450</Text>
-          <Text style={styles.boxbody}>Payment duration:</Text>
-          <Text style={styles.texthighlight}>3 months</Text>
-      </View>
-      </View>
-      </View>
+
+          </View>
+            <View style={styles.boxContainer}>
+              <Text style={styles.subheader}>Lowest Interest Rate</Text>
+                <View style={styles.emptyBox}>
+                  <Text style={styles.boxheader}>Ross Geller</Text>
+                  <Text style={styles.boxbody}>Interest rate</Text>
+                  <Text style={styles.boxpercent}>3.01%</Text>
+                  <Text style={styles.boxbody}>Amount to receive:<Text style={styles.highlight}>₱2,450</Text></Text>
+                  <Text style={styles.boxbody}>Payment duration:<Text style={styles.highlight}>3 months</Text></Text>
+                    <View style={styles.contactbg}>
+                      <Text style={styles.boxcontact}>Contact Ross</Text>
+                    </View>
+                </View>
+            </View>
+
+            <View style={styles.copy}>
+              <View style={styles.boxContainer1}>
+                <Text style={styles.subheader1}>Other Rates</Text>
+                  <View style={styles.empty}>
+                    <Text style={styles.boxheader1}>Chandler Bing</Text>
+                    <Text style={styles.boxbody}>Interest rate</Text>
+                    <Text style={styles.boxpercent1}>4.00%</Text>
+                    <Text style={styles.boxbody}>Amount to receive:</Text>
+                    <Text style={styles.texthighlight}>₱2,450</Text>
+                    <Text style={styles.boxbody}>Payment duration:</Text>
+                    <Text style={styles.texthighlight}>3 months</Text>
+                  </View>
+              </View>
+              
+            <View style={styles.boxContainer1}>
+              <Text style={styles.subheader1}></Text>
+                <View style={styles.empty}>
+                  <Text style={styles.boxheader1}>Monica Geller</Text>
+                  <Text style={styles.boxbody}>Interest rate</Text>
+                  <Text style={styles.boxpercent1}>4.00%</Text>
+                  <Text style={styles.boxbody}>Amount to receive:</Text>
+                  <Text style={styles.texthighlight}>₱2,450</Text>
+                  <Text style={styles.boxbody}>Payment duration:</Text>
+                  <Text style={styles.texthighlight}>3 months</Text>
+                </View>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -164,6 +169,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 16,
     marginTop: 20,
+  },
+  content: {
+    flex: 1,
   },
   headerText: {
     fontSize: 35,

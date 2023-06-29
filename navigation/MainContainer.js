@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, TouchableWithoutFeedback, Keyboard, TextInput, Button, TouchableOpacity, Platform, Image } from 'react-native';
+import { StyleSheet, Text} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'
@@ -36,9 +36,9 @@ export default function MainContainer(){
         <NavigationContainer>
             <Tab.Navigator
                 initialRouteName={BorrowName}
-                screenOptions = {({route}) => ({
-                    headerShown: false, // Hide the screen names from the header
-                    tabBarIcon: ({focused, color, size}) => {
+                screenOptions={({ route }) => ({
+                headerShown: false, // Hide the screen names from the header
+                tabBarIcon: ({ focused, color, size }) => {
                         let iconName;
                         let rn = route.name;
 
@@ -54,14 +54,11 @@ export default function MainContainer(){
 
                         return <Ionicons name={iconName} size={size} color={color}/>
                     },
+                    tabBarActiveTintColor: 'grey',
+                    tabBarInactiveTintColor: 'grey',
+                    tabBarLabelStyle: { paddingBottom: 10, fontSize: 10 },
+                    tabBarStyle: { padding: 10, height: 60 },
                 })}
-                tabBarOptions={{
-                    activeTintColor: 'grey',
-                    inactiveTintColor: 'grey',
-                    labelStyle: {paddingBottom: 10, fontSize: 10},
-                    style: {padding: 10, height: 70}
-                }}
-                
                 >
 
                 <Tab.Screen name={BorrowName} component={StackScreen}/>
