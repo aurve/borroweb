@@ -5,7 +5,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-//test maincontainer if working
 //Screens
 import Borrow from './screens/borrow'
 import Inbox from './screens/inbox'
