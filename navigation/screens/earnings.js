@@ -10,7 +10,7 @@ export default function Earnings({navigation}) {
       <ScrollView contentContainerStyle={{flexGrow: 1, backgroundColor: '#fff'}} showsVerticalScrollIndicator={false} indicatorStyle="white">
       <View style={styles.content}>
       <Text style={styles.text}>
-          
+          Test
         </Text>
       </View>
       </ScrollView>
